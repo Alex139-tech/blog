@@ -1,0 +1,30 @@
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #041a31, #6610f2);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(238, 236, 236, 0.4);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-text {
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+    white-space: nowrap;
+    animation: scroll-left 25s linear infinite; /* Speed ko thoda tez kiya */
+    padding-left: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+

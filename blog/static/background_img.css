@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+.background {
+    background-image: url('photo/blog1.jpg'); /* Replace with your image path */
+    background-size: contain;
+    background-position: center;
+    height: 100%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* filter: brightness(50%); */
+}
+
+.content {
+    text-align: center;
+    color: white;
+    background-color: sad;
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Optional text shadow for better visibility */
+}
+
+/* tex color and dynamic */
+h1, h2 {
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+    animation: dynamicText 2s infinite alternate;
+}
+
+h1 {
+    font-size: 4rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.925);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.884);
+}
+
+/* Dynamic animation */
+@keyframes dynamicText {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(10px);
+        opacity: 0.7;
+    }
+}
+body:not(.home-page) {
+    background-image: none;
+}

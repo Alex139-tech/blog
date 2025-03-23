@@ -1,0 +1,36 @@
+/* Home page par background image apply karna */
+.home-page-background {
+    background-image: url('photo/blog1.jpg'); /* Background image path */
+    background-size: cover; /* Ensures the image covers the whole section */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    height: 100vh; /* Take full viewport height */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Content style */
+.content {
+    text-align: center;
+    color: white; /* White text for visibility on dark backgrounds */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background to make text more readable */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+/* Heading styling */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* For other pages, we don't want the background */
+body:not(.home-page) {
+    background-image: none;
+}

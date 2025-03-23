@@ -1,0 +1,26 @@
+.about-intro {
+    font-size: 18px;
+    color: #555;
+}
+
+.why-choose ul {
+    font-size: 16px;
+    color: #333;
+}
+
+.team-section img {
+    border: 3px solid #ddd;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-section img:hover {
+    transform: scale(1.1);
+}
+
+.cta-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

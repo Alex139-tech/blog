@@ -1,0 +1,79 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff, #3498db); /* Linear Gradient Blue to White */
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: sticky; /* Sticky positioning */
+    top: 0;
+    z-index: 1000; /* Ensure it's on top of other content */
+    width: 100%;  /* Full width */
+    margin: 0;
+}
+
+/* Ensure menu items are aligned properly */
+.navbar a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Flexbox for menu */
+.menu {
+    display: flex;
+}
+
+.menu a:hover {
+    color: #ffcc00;
+}
+
+/* For Hamburger Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: black;
+    font-size: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        backdrop-filter: blur(10px);
+        border-radius: 0 0 10px 10px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+

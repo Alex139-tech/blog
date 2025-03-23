@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<div class="container">
+    <h2>Contact Us</h2>
+
+    <!-- Contact Form Section -->
+    <form method="POST" action="#">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Contact Information Section -->
+    <div class="contact-info mt-5">
+        <h3>Our Office</h3>
+        <p><strong>Address:</strong> 123, Lalitpur, Kathmandu, Nepal</p>
+        <p><strong>Email:</strong> deepakraj90054@email.com</p>
+        <p><strong>Phone:</strong> 9829014425</p>
+
+        <!-- Google Maps Embed -->
+        <div class="map-embed mt-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.3604192744415!2d80.22702241531038!3d13.082680790690357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526799559de61d%3A0xd357bc9d357254f0!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1616586235051!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

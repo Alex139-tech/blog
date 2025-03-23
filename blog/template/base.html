@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Icons for Navbar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Static files -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'scroll.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'card.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'background_img.css' %}">
+    <link rel="stylesheet" href="{% static 'search_page.css' %}">
+    
+</head>
+<body class="bg-dark text-light">
+
+    <!-- Navbar -->
+       <nav class="navbar">
+        <div class="logo">NEPAL BLOG</div>
+
+          <!-- Search Bar -->
+          <form action="{% url 'search_results' %}" method="GET" class="search-form">
+            <input type="text" name="q" placeholder="Search for products, categories, brands..." autocomplete="off">
+            <button type="submit"><i class="bi bi-search"></i></button>
+        </form>       
+
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+
+        <div class="menu">
+            <a href="{% url 'home' %}"><i class="bi bi-house-door"></i> Home</a>
+
+            <a href="{% url 'about' %}"><i class="bi bi-info-circle"></i> About</a>
+
+            <a href="{% url 'post_list' %}"><i class="bi bi-journal-text"></i> Blog</a>
+            
+            
+
+            <a href="{% url 'upload_post' %}"><i class="bi bi-file-earmark-post"></i> Post</a>
+            <a href="{% url 'contact' %}"><i class="bi bi-envelope"></i> Contact</a>
+            <a href="{% url 'logout' %}" class="logout-btn"><i class="bi bi-box-arrow-right"></i> LOGOUT</a>
+        </div>
+    </nav>
+    <!-- Scrolling text -->
+    <div class="scroll-container">
+        <div class="scroll-text">
+            🚀 Welcome to My Blog | Latest Updates & News | Stay Tuned for More! 🚀
+        </div>
+    </div>
+    
+    <!-- Background image section -->
+    <div class="background">
+        <div class="content">
+            <h1> NEPAL FIRST BLOG WEBSITE </h1>
+            <h2> THANKS FOR VISIT MY WEBSITE_.. </h2>
+        </div>
+    </div>
+
+    <!-- Yahan par content dynamically inject hoga -->
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+  
+       <!-- footer section on this wepage -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- About Us Section -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase">About Us</h5>
+                    <p>Welcome to our blog! We share insights, tutorials, and news on web development, technology, and more. Stay tuned for interesting content.</p>
+                </div>
+    
+                <!-- Quick Links Section -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'post_list' %}" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Follow Us Section -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="bi bi-twitter"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com" target="_blank" class="text-white me-3"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Extended Section: Newsletter Signup -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <h5 class="text-uppercase mb-3">Subscribe to Our Newsletter</h5>
+                    <form action="#" method="post">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Extended Section: Sitemap or Extra Links -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5 class="text-uppercase">Sitemap</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Blog Categories</a></li>
+                        <li><a href="#" class="text-white">Tutorials</a></li>
+                        <li><a href="#" class="text-white">Web Development Tips</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-md-6">
+                    <h5 class="text-uppercase">Contact Information</h5>
+                    <p class="text-white"></p>
+                    <p><strong>Address:</strong> 123,lalitpur,Kathmandu,Nepal</p>
+                    <p><strong>Email:</strong>deepakraj90054@email.com</p>
+                    <p><strong>Phone:</strong>9829014425</p>
+            
+                </div>
+            </div>
+    
+            <!-- Footer Bottom Section -->
+            <div class="text-center mt-5">
+                <p class="mb-0">&copy; 2025 Your Blog Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+
+
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".menu").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>
